@@ -11,6 +11,17 @@ function agregarAmigo(){
         alert("Solo se permiten letras y espacios.");
     }
     limpiarCaja();
+    listaAmigos();
+
+}
+function listaAmigos() {
+    
+    document.getElementById("listaAmigos").innerHTML = "";
+
+    for(var i = 0; i < amigos.length; i++){
+       console.log(amigos[i]);
+        document.getElementById("listaAmigos").innerHTML += `<li>${amigos[i]}</li>`;
+    }
 }
 
 function esTextoValido(amigo) {
