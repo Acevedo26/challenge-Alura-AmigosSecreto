@@ -1,4 +1,16 @@
 let amigos = [];
+limpiarCaja();
+
+const input = document.getElementById("amigo");
+const btn = document.getElementById("btn-agregar");
+
+  btn.addEventListener("click", agregarAmigo);
+
+  input.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      agregarAmigo();
+    }
+  });
 
 function agregarAmigo() {
     let amigo = document.getElementById('amigo').value;
@@ -12,8 +24,8 @@ function agregarAmigo() {
     }
     limpiarCaja();
     listaAmigos();
-
 }
+
 function listaAmigos() {
 
     document.getElementById("listaAmigos").innerHTML = "";
@@ -46,4 +58,5 @@ function esTextoValido(amigo) {
 
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
-}
+    document.querySelector('#amigo').focus();
+} 
